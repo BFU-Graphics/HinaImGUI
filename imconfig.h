@@ -62,8 +62,10 @@
         ImVec4(const Vec4& f) { x = f.x; y = f.y; z = f.z; w = f.w; }     \
         operator Vec4() const { return Vec4(x,y,z,w); }
 
-#include <lib/vec2.h>
-#include <lib/vec4.h>
+#include "math/vector2.h"
+#include "math/vector4.h"
+using Vec2 = HinaPE::Vector2F;
+using Vec4 = HinaPE::Vector4F;
 
 //---- Using 32-bits vertex indices (default is 16-bits) is one way to allow large meshes with more than 64K vertices. 
 // Your renderer back-end will need to support it (most example renderer back-ends support both 16/32-bits indices).
