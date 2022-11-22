@@ -55,17 +55,17 @@
 // This will be inlined as part of ImVec2 and ImVec4 class declarations.
 
 #define IM_VEC2_CLASS_EXTRA                                                 \
-        ImVec2(const Vec2& f) { x = f.x; y = f.y; }                       \
-        operator Vec2() const { return Vec2(x,y); }
+        ImVec2(const mVec2& f) { x = f.x; y = f.y; }                       \
+        operator mVec2() const { return mVec2(x,y); }
 
 #define IM_VEC4_CLASS_EXTRA                                                 \
-        ImVec4(const Vec4& f) { x = f.x; y = f.y; z = f.z; w = f.w; }     \
-        operator Vec4() const { return Vec4(x,y,z,w); }
+        ImVec4(const mVec4& f) { x = f.x; y = f.y; z = f.z; w = f.w; }     \
+        operator mVec4() const { return mVec4(x,y,z,w); }
 
 #include "math/vector2.h"
 #include "math/vector4.h"
-using Vec2 = HinaPE::Vector2F;
-using Vec4 = HinaPE::Vector4F;
+using mVec2 = HinaPE::Vector2F;
+using mVec4 = HinaPE::Vector4F;
 
 //---- Using 32-bits vertex indices (default is 16-bits) is one way to allow large meshes with more than 64K vertices. 
 // Your renderer back-end will need to support it (most example renderer back-ends support both 16/32-bits indices).
